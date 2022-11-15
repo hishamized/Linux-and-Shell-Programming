@@ -1,0 +1,57 @@
+#This is a script thay checks whether a given string is a palindrome or not
+echo "Kindly enter any word"
+read word
+n=${#word}
+a=1
+b=$n
+echo "The length of $word is : $n"
+echo "$word" > wordFile.txt
+if [ $((n%2)) -eq 0 ];
+then
+ while [ $a -ne $((n/2)) ]
+  do
+   x=$(cut -c $a wordFile.txt)
+   y=$(cut -c $b wordFile.txt)
+   if [ $x == $y ];
+    then
+      check="true"
+      #echo "$check if 1"
+    else
+      check="false"
+      #echo "$check else 1"
+      break
+   fi
+   a=$((a+1))
+   b=$((b-1))
+  done
+   if [ $check == "true" ];
+    then
+      #echo "$check if 2"
+      echo "Yes, the word $word is a  palindrome"
+   else
+      #echo "$check else 2"
+      echo "No! The word $word is not palidrome"
+   fi
+else 
+ while [ $a -ne $b ]
+  do
+   x=$(cut -c $a wordFile.txt)
+   y=$(cut -c $b wordFile.txt)
+   if [ $x == $y ]
+    then
+     check="true"
+   else
+     check="false"
+     break
+   fi
+   a=$((a+1))
+   b=$((b-1))
+ done
+  if [ $check == "true" ]
+   then
+    echo "Yes, the word $word is a palindrome"
+   else
+    echo "No! The word $word is not a palindrome"
+  fi 
+fi
+

@@ -1,0 +1,7 @@
+#We will create and access elements of an array
+ANIMALS="Cat Dog Bear Elephant Hen"
+for i in $ANIMALS
+do
+ echo $i
+done
+

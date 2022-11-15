@@ -1,0 +1,13 @@
+#We will take path from the user and then check if its a file or a directory or something else
+echo "Enter the file path"
+read FILE
+if [ -f "#FILE" ]
+then
+echo "$FILE" is a regular file
+elif [ -d "$FILE" ]
+then
+echo "$FILE" is a directory
+else
+echo "$FILE" is a different type of a file
+fi
+ls -l $FILE

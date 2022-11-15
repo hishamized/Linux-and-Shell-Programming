@@ -1,0 +1,6 @@
+#This script swaps a two digit  number
+a=0
+echo "Enter any number"
+read num
+a=$(((($num%10)*10)+($num/10)))
+echo "The swapped number is : $a"
